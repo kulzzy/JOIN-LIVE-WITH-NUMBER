@@ -65,7 +65,7 @@ body{
 
 
 /* =====================================================
-   NEW TOP TITLE
+   TOP TITLE
    ===================================================== */
 
 .kulzzy-conversation-title{
@@ -85,7 +85,7 @@ body{
 
 
 /* =====================================================
-   NEW AFRICAN / NIGERIAN CALL PICTURES
+   AFRICAN / NIGERIAN CALL PICTURES
    ===================================================== */
 
 .kulzzy-call-pictures{
@@ -147,7 +147,7 @@ body{
 }
 
 
-/* PHONE NUMBER TEXT ABOVE THE TWO BOXES */
+/* PHONE NUMBER TEXT */
 
 .kulzzy-label{
   display:block;
@@ -159,7 +159,7 @@ body{
 }
 
 
-/* TWO BOXES IN ONE STRAIGHT LINE */
+/* PHONE NUMBER + JOIN BUTTON */
 
 .kulzzy-input-row{
   width:100%;
@@ -309,6 +309,150 @@ body{
 
 
 /* =====================================================
+   LARGE LANDLINE PHONE — BOTTOM
+   ===================================================== */
+
+.kulzzy-bottom-landline{
+  width:100%;
+  min-height:500px;
+  margin:25px 0 0;
+  padding:20px 10px 35px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+  background:transparent;
+}
+
+.kulzzy-landline{
+  position:relative;
+  width:min(92vw,560px);
+  height:430px;
+  border-radius:45px;
+  background:linear-gradient(
+    145deg,
+    #082b52 0%,
+    #001d40 55%,
+    #001126 100%
+  );
+  border:6px solid #ffd000;
+  box-shadow:
+    0 25px 55px rgba(0,0,0,.55),
+    inset 0 0 30px rgba(255,255,255,.05);
+}
+
+
+/* =====================================================
+   LANDLINE HANDSET
+   ===================================================== */
+
+.kulzzy-handset{
+  position:absolute;
+  top:28px;
+  left:50%;
+  transform:translateX(-50%);
+  width:410px;
+  max-width:82%;
+  height:105px;
+  background:#00152d;
+  border:5px solid #ffd000;
+  border-radius:55px;
+  box-shadow:
+    0 12px 25px rgba(0,0,0,.5);
+}
+
+.kulzzy-handset:before,
+.kulzzy-handset:after{
+  content:"";
+  position:absolute;
+  top:-8px;
+  width:115px;
+  height:120px;
+  background:#00152d;
+  border:5px solid #ffd000;
+  border-radius:45px;
+}
+
+.kulzzy-handset:before{
+  left:-15px;
+}
+
+.kulzzy-handset:after{
+  right:-15px;
+}
+
+
+/* =====================================================
+   LANDLINE DIAL
+   ===================================================== */
+
+.kulzzy-dial{
+  position:absolute;
+  left:50%;
+  top:155px;
+  transform:translateX(-50%);
+  width:220px;
+  height:220px;
+  border-radius:50%;
+  background:#fff;
+  border:8px solid #ffd000;
+  box-shadow:
+    inset 0 0 20px rgba(0,0,0,.35),
+    0 10px 25px rgba(0,0,0,.45);
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:8px;
+  padding:25px;
+}
+
+.kulzzy-dial-number{
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  background:#001d40;
+  color:#fff;
+  border:2px solid #46688f;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:16px;
+  font-weight:900;
+  margin:auto;
+}
+
+
+/* =====================================================
+   LANDLINE BRAND
+   ===================================================== */
+
+.kulzzy-landline-brand{
+  position:absolute;
+  bottom:15px;
+  width:100%;
+  left:0;
+  text-align:center;
+  color:#ffd000;
+  font-size:20px;
+  font-weight:1000;
+  letter-spacing:3px;
+}
+
+.kulzzy-landline-text{
+  position:absolute;
+  bottom:-13px;
+  left:50%;
+  transform:translateX(-50%);
+  background:#ffd000;
+  color:#001a3a;
+  padding:6px 15px;
+  border-radius:20px;
+  font-size:11px;
+  font-weight:900;
+  white-space:nowrap;
+}
+
+
+/* =====================================================
    MOBILE
    ===================================================== */
 
@@ -356,10 +500,59 @@ body{
     font-size:14px;
   }
 
+
+  /* BOTTOM PHONE */
+
+  .kulzzy-bottom-landline{
+    min-height:420px;
+  }
+
+  .kulzzy-landline{
+    height:350px;
+    border-width:4px;
+    border-radius:35px;
+  }
+
+  .kulzzy-handset{
+    top:22px;
+    width:300px;
+    height:75px;
+    border-width:4px;
+  }
+
+  .kulzzy-handset:before,
+  .kulzzy-handset:after{
+    width:80px;
+    height:90px;
+    border-width:4px;
+  }
+
+  .kulzzy-dial{
+    top:120px;
+    width:180px;
+    height:180px;
+    padding:20px;
+    border-width:6px;
+    gap:5px;
+  }
+
+  .kulzzy-dial-number{
+    width:35px;
+    height:35px;
+    font-size:13px;
+  }
+
+  .kulzzy-landline-brand{
+    font-size:16px;
+    bottom:12px;
+  }
+
 }
 
 
-/* VERY SMALL PHONES */
+/* =====================================================
+   VERY SMALL PHONES
+   ===================================================== */
 
 @media(max-width:380px){
 
@@ -387,6 +580,36 @@ body{
     font-size:13px;
   }
 
+
+  .kulzzy-bottom-landline{
+    min-height:390px;
+  }
+
+  .kulzzy-landline{
+    height:320px;
+  }
+
+  .kulzzy-handset{
+    width:260px;
+  }
+
+  .kulzzy-dial{
+    top:110px;
+    width:160px;
+    height:160px;
+    padding:17px;
+  }
+
+  .kulzzy-dial-number{
+    width:31px;
+    height:31px;
+    font-size:12px;
+  }
+
+  .kulzzy-landline-brand{
+    font-size:14px;
+  }
+
 }
 
 </style>
@@ -404,7 +627,7 @@ body{
 
 
       <!-- =================================================
-           NEW TOP TITLE
+           TOP TITLE
            ================================================= -->
 
       <div class="kulzzy-conversation-title">
@@ -414,7 +637,7 @@ body{
 
 
       <!-- =================================================
-           NEW AFRICAN / NIGERIAN PHONE CALL PICTURES
+           3 AFRICAN / NIGERIAN PHONE-CALL PICTURES
            ================================================= -->
 
       <div class="kulzzy-call-pictures">
@@ -466,7 +689,9 @@ body{
       </div>
 
 
-      <!-- JOIN AREA -->
+      <!-- =================================================
+           JOIN AREA
+           ================================================= -->
 
       <div id="joinArea">
 
@@ -511,7 +736,9 @@ body{
       </div>
 
 
-      <!-- STATUS -->
+      <!-- =================================================
+           STATUS
+           ================================================= -->
 
       <div
         class="kulzzy-status-box kulzzy-hidden"
@@ -565,6 +792,59 @@ body{
             id="micStatus"
           >
             Tap the button to start talking on-air.
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- =================================================
+           ONE LARGE LANDLINE PHONE AT THE BOTTOM
+           ================================================= -->
+
+      <div class="kulzzy-bottom-landline">
+
+        <div class="kulzzy-landline">
+
+
+          <!-- LANDLINE HANDSET -->
+
+          <div class="kulzzy-handset"></div>
+
+
+          <!-- LANDLINE DIAL -->
+
+          <div class="kulzzy-dial">
+
+            <div class="kulzzy-dial-number">1</div>
+            <div class="kulzzy-dial-number">2</div>
+            <div class="kulzzy-dial-number">3</div>
+
+            <div class="kulzzy-dial-number">4</div>
+            <div class="kulzzy-dial-number">5</div>
+            <div class="kulzzy-dial-number">6</div>
+
+            <div class="kulzzy-dial-number">7</div>
+            <div class="kulzzy-dial-number">8</div>
+            <div class="kulzzy-dial-number">9</div>
+
+            <div class="kulzzy-dial-number">*</div>
+            <div class="kulzzy-dial-number">0</div>
+            <div class="kulzzy-dial-number">#</div>
+
+          </div>
+
+
+          <!-- LANDLINE BRAND -->
+
+          <div class="kulzzy-landline-brand">
+            KULZZY RADIO
+          </div>
+
+
+          <div class="kulzzy-landline-text">
+            ☎ CALL • CONNECT • CELEBRATE
           </div>
 
         </div>
@@ -1105,7 +1385,7 @@ REGISTER CALLER
 =========================================================
 */
 
-    async function registerCaller(){
+async function registerCaller(){
 
   clearError();
 
@@ -1862,5 +2142,4 @@ console.log(
 
 </body>
 
-</html>    
-    
+</html>
