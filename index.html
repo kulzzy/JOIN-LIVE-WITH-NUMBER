@@ -65,6 +65,78 @@ body{
 
 
 /* =====================================================
+   NEW TOP TITLE
+   ===================================================== */
+
+.kulzzy-conversation-title{
+  width:100%;
+  text-align:center;
+  margin:0;
+  padding:4px 5px 10px;
+  font-size:clamp(27px,7vw,58px);
+  line-height:1.02;
+  font-weight:1000;
+  letter-spacing:1px;
+  color:rgba(255,255,255,.18);
+  text-transform:uppercase;
+  text-shadow:
+    0 2px 8px rgba(0,0,0,.25);
+}
+
+
+/* =====================================================
+   NEW AFRICAN / NIGERIAN CALL PICTURES
+   ===================================================== */
+
+.kulzzy-call-pictures{
+  width:100%;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:8px;
+  margin:0 0 15px;
+}
+
+.kulzzy-call-picture{
+  position:relative;
+  width:100%;
+  height:150px;
+  overflow:hidden;
+  border-radius:14px;
+  border:1px solid rgba(255,208,0,.35);
+  background:#001d40;
+}
+
+.kulzzy-call-picture img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  object-position:center;
+  transition:transform .4s ease;
+}
+
+.kulzzy-call-picture:hover img{
+  transform:scale(1.05);
+}
+
+.kulzzy-call-picture-overlay{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  padding:22px 8px 8px;
+  background:linear-gradient(
+    transparent,
+    rgba(0,0,0,.75)
+  );
+  color:#fff;
+  font-size:12px;
+  font-weight:900;
+  text-align:center;
+}
+
+
+/* =====================================================
    JOIN AREA
    ===================================================== */
 
@@ -242,6 +314,27 @@ body{
 
 @media(max-width:600px){
 
+  .kulzzy-conversation-title{
+    font-size:29px;
+    padding:3px 4px 9px;
+  }
+
+  .kulzzy-call-pictures{
+    grid-template-columns:repeat(3,1fr);
+    gap:5px;
+    margin-bottom:12px;
+  }
+
+  .kulzzy-call-picture{
+    height:105px;
+    border-radius:10px;
+  }
+
+  .kulzzy-call-picture-overlay{
+    font-size:9px;
+    padding:16px 3px 5px;
+  }
+
   .kulzzy-label{
     font-size:15px;
     margin-bottom:7px;
@@ -269,6 +362,18 @@ body{
 /* VERY SMALL PHONES */
 
 @media(max-width:380px){
+
+  .kulzzy-conversation-title{
+    font-size:25px;
+  }
+
+  .kulzzy-call-picture{
+    height:88px;
+  }
+
+  .kulzzy-call-picture-overlay{
+    display:none;
+  }
 
   #kulzzyLiveCommunity .kulzzy-phone{
     font-size:14px;
@@ -298,6 +403,69 @@ body{
     <main class="kulzzy-community-box">
 
 
+      <!-- =================================================
+           NEW TOP TITLE
+           ================================================= -->
+
+      <div class="kulzzy-conversation-title">
+        JOIN THE CONVERSATION<br>
+        LET'S CELEBRATE
+      </div>
+
+
+      <!-- =================================================
+           NEW AFRICAN / NIGERIAN PHONE CALL PICTURES
+           ================================================= -->
+
+      <div class="kulzzy-call-pictures">
+
+        <div class="kulzzy-call-picture">
+
+          <img
+            src="https://commons.wikimedia.org/wiki/Special:Redirect/file/The_phone_call.jpg"
+            alt="Nigerian person using a smartphone"
+            loading="lazy"
+          >
+
+          <div class="kulzzy-call-picture-overlay">
+            📱 STAY CONNECTED
+          </div>
+
+        </div>
+
+
+        <div class="kulzzy-call-picture">
+
+          <img
+            src="https://www.cph.cam.ac.uk/sites/default/files/adobestock_479668969.jpeg"
+            alt="African woman receiving a phone call"
+            loading="lazy"
+          >
+
+          <div class="kulzzy-call-picture-overlay">
+            📞 RECEIVE THE CALL
+          </div>
+
+        </div>
+
+
+        <div class="kulzzy-call-picture">
+
+          <img
+            src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Participant_on_Mobile_Phone_WikiDemocracy_Event_May_2017_30.jpg"
+            alt="Nigerian person using a mobile phone"
+            loading="lazy"
+          >
+
+          <div class="kulzzy-call-picture-overlay">
+            🎙️ JOIN THE COMMUNITY
+          </div>
+
+        </div>
+
+      </div>
+
+
       <!-- JOIN AREA -->
 
       <div id="joinArea">
@@ -310,7 +478,7 @@ body{
         </label>
 
 
-        <!-- PHONE + JOIN BUTTON -->
+        <!-- PHONE NUMBER COMES BEFORE JOIN BUTTON -->
 
         <div class="kulzzy-input-row">
 
@@ -937,7 +1105,7 @@ REGISTER CALLER
 =========================================================
 */
 
-async function registerCaller(){
+    async function registerCaller(){
 
   clearError();
 
@@ -1694,4 +1862,5 @@ console.log(
 
 </body>
 
-</html>
+</html>    
+    
